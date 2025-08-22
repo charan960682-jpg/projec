@@ -1,0 +1,55 @@
+:root {
+  --bg: #0b1020;
+  --panel: #0f1630cc;
+  --text: #e9f0ff;
+  --accent: #7aa2ff;
+  --good: #9aff7a;
+  --bad: #ff6b6b;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 70% 20%, #101a3a 0%, var(--bg) 60%);
+  overflow: hidden;
+}
+#game {
+  position: fixed; inset: 0; width: 100vw; height: 100vh; display: block;
+}
+.hud {
+  position: fixed; top: 12px; left: 12px; right: 12px;
+  display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: start;
+  pointer-events: none;
+}
+.pill {
+  pointer-events: auto;
+  background: var(--panel); backdrop-filter: blur(6px);
+  border: 1px solid #1e2a5a; color: var(--text);
+  border-radius: 16px; padding: 10px 14px; box-shadow: 0 6px 24px #00000066;
+}
+.scorebar { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.tag { opacity: .7; margin-right: 6px; font-weight: 600; }
+.value { font-variant-numeric: tabular-nums; font-weight: 700; }
+.buttons { display: flex; gap: 10px; }
+button {
+  appearance: none; border: 1px solid #2b3978; color: var(--text);
+  background: linear-gradient(#17234f, #0f183a); border-radius: 14px;
+  padding: 10px 14px; font-weight: 700; cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+  box-shadow: 0 6px 18px #0007;
+}
+button:hover { transform: translateY(-1px); }
+button:active { transform: translateY(0); }
+.center {
+  position: fixed; inset: 0; display: grid; place-items: center; pointer-events: none;
+}
+.card {
+  pointer-events: auto; max-width: 680px; text-align: center; line-height: 1.4;
+  padding: 26px 24px; border-radius: 20px; border: 1px solid #24336a; background: var(--panel);
+  box-shadow: 0 30px 80px #00000088;
+}
+.title { font-size: clamp(28px, 5vw, 42px); margin: 8px 0 12px; }
+.subtitle { opacity: .8; margin-bottom: 18px; }
+.kbd { font-family: monospace; background: #0b122b; border: 1px solid #22306a; padding: 2px 6px; border-radius: 6px; }
+.hidden { display: none !important; }
